@@ -4,7 +4,7 @@ const divList = [];
 function numOfSquares(){
     let squareNum = prompt('How big?', '100 MAX')
 for (i=0; i < squareNum ; i++){ 
-    const body = document.querySelector('body');
+    const box = document.querySelector('.box');
     containers[i] = document.createElement('div');
     containers[i].setAttribute('class', 'container')
     for (y=0; y < squareNum ; y++){
@@ -12,7 +12,7 @@ for (i=0; i < squareNum ; i++){
         divList[y].setAttribute('class', 'square');
         containers[i].append(divList[y])
     }
-    body.append(containers[i])
+    box.append(containers[i])
 };
 };
 // for (i=0; i < 16 ; i++){ // Hover function to add and remove background

@@ -2,19 +2,30 @@
     box-sizing: border-box;
 }
 body {
+    display: flex;
+    justify-content: right;
     margin:0;
     padding:0;
 }
 
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    height:400px;
+    width: 400px;
+}
 .container {
     display: flex;
+    flex-grow: 1;
     flex-wrap: wrap;
     gap: 1px;
 }
 
 .square {
     flex-grow: 1;
-    height: 70px;
+    flex-shrink: 1;
+    padding: 2px;
     border: 1px solid black;
     color: black;
 }
