@@ -1,36 +1,26 @@
 // const container = document.getElementById('container');
 const containers = [];
 const divList = [];
-const body = document.querySelector('body')
-const btnContainer = document.createElement('div');
-const btnStart = document.createElement('button');
-const btnClear = document.createElement('button');
-btnStart.innerText = 'Dimensions';
-btnClear.innerText = 'Clear';
-btnContainer.setAttribute('class', 'btns-css')
-btnStart.setAttribute('class','start');
-btnClear.setAttribute('class','clear')
-body.append(btnContainer);
-btnContainer.append(btnStart);
-btnContainer.append(btnClear);
-
-
-
 
 function numOfSquares(){
-    let squareNum = prompt('How big?', '100 MAX')
-for (i=0; i < squareNum ; i++){ 
-    const box = document.querySelector('.box');
-    containers[i] = document.createElement('div');
-    containers[i].setAttribute('class', 'container')
-    for (y=0; y < squareNum ; y++){
-        divList[y] = document.createElement('div');
-        divList[y].setAttribute('class', 'square');
-        divList[y].addEventListener('mouseover', hoverOn);
-        containers[i].append(divList[y])
-    };
-    box.append(containers[i]);
-    };
+    let squareNum = prompt('Insert a valid number (Max 100)', 100);
+    
+    if (squareNum<=100){
+        for (i=0; i < squareNum ; i++){ 
+            const box = document.querySelector('.box');
+            containers[i] = document.createElement('div');
+            containers[i].setAttribute('class', 'container')
+            for (y=0; y < squareNum ; y++){
+                divList[y] = document.createElement('div');
+                divList[y].setAttribute('class', 'square');
+                divList[y].addEventListener('mouseover', hoverOn);
+                containers[i].append(divList[y])
+            };
+            box.append(containers[i]);
+        };
+    } else {
+        numOfSquares();
+    }
 };
 
 
