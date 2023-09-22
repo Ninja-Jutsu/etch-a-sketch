@@ -1,34 +1,37 @@
-// const container = document.getElementById('container');
+
+
 const containers = []
 const divList = []
 const DEFAULT_COLOR = '#333333'
 const DEFAULT_MODE = 'color'
+const DEFAULT_SIZE = 16
 
 
 let currentColor = DEFAULT_COLOR
 let currentMode = DEFAULT_MODE
+let currentSize = DEFAULT_SIZE
 
 const box = document.querySelector('.box')
 const setBtn = document.querySelector('.start')
 const clearBtn = document.querySelector('.clear')
 const colorPicker = document.getElementById('colorPicker')
+const sizeSlider = document.getElementById('sizeSlider')
+const restart = document.querySelectorAll('.container')
 
 colorPicker.oninput = (e) => setCurrentColor(e.target.value)
-setBtn.onclick = () => numOfSquares()
 clearBtn.onclick = () =>clearBox()
 colorBtn.onclick = () => setCurrentMode('color')
 rainbowBtn.onclick = () => setCurrentMode('rainbow')
 eraserBtn.onclick = () => setCurrentMode('eraser')
-
+sizeSlider.onchange = (e) => changeSize(e.target.value)
+sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value)
 
 function numOfSquares(){
-    let squareNum = prompt('Insert a valid number (Max 100)', 100);
-    if (squareNum<=100){
         box.innerHTML = '';
-        for (i=0; i < squareNum ; i++){ 
+        for (i=0; i < currentSize ; i++){ 
             containers[i] = document.createElement('div');
             containers[i].setAttribute('class', 'container')
-            for (y=0; y < squareNum ; y++){
+            for (y=0; y < currentSize ; y++){
                 divList[y] = document.createElement('div');
                 divList[y].setAttribute('class', 'square');
                 divList[y].addEventListener('mouseover', hoverOn);
@@ -36,9 +39,6 @@ function numOfSquares(){
             };
             box.append(containers[i]);
         };
-    } else {
-        numOfSquares();
-    }
 };
 
 function hoverOn(){
@@ -56,10 +56,10 @@ function hoverOn(){
 };
 
 function clearBox(){
-    const restart = document.querySelectorAll('.container');
     for (i=0; i<restart.length ; i++){
         restart[i].remove()
     }
+    numOfSquares()
 };
 
 function setCurrentColor(newColor) {
@@ -69,6 +69,14 @@ function setCurrentColor(newColor) {
 function setCurrentMode(newMode) {
     activateButton(newMode)
     currentMode = newMode
+  }
+
+  function setCurrentSize(newSize) {
+    currentSize = newSize
+  }
+
+  function updateSizeValue(value) {
+    sizeValue.innerHTML = `${value} x ${value}`
   }
 
 function activateButton(newMode) {
@@ -89,6 +97,14 @@ if (newMode === 'rainbow') {
 }
 }
 
+function changeSize(value) {
+    setCurrentSize(value)
+    updateSizeValue(value)
+    numOfSquares()
+  }
+
 window.onload = () => {
     activateButton(DEFAULT_MODE)
   }
+
+  numOfSquares()

@@ -20,7 +20,7 @@ html {
 }
 body {
     padding:0;
-    width: 500px;
+    width: 600px;
 }
 
 .btn-n-box {
@@ -42,8 +42,8 @@ body {
     background-color: #efefce;
     border: 1px solid black;
     flex-shrink: 0;
+    box-shadow: 10px 10px rgb(226, 227, 218);
 }
-
 .container {
     display: flex;
     flex-grow: 1;
@@ -57,28 +57,22 @@ body {
     padding: 1px;
 }
 
-.btns {
+.settings {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
 }
 
-.start, .clear {
+button {
+    padding: 10px 5px ;
+    font-size: 16px;
+    font-weight: bolder;
     border: none;
-    padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
+    border-radius: 16px;
+    background-color: blanchedalmond;
 }
 
-.start {
-    background-color: lightgreen;
-}
-
-.clear {
-    background-color: lightcoral;
-}
-
-.start:hover, .clear:hover {
+button:hover{
     transform: scale(1.1);
 }
