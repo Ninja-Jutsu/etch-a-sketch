@@ -14,6 +14,7 @@ body {
     justify-content: right;
     height:400px;
     width: 400px;
+    background-color: rgb(255, 255, 196);
 }
 .container {
     display: flex;
@@ -26,6 +27,6 @@ body {
     flex-grow: 1;
     flex-shrink: 1;
     padding: 2px;
-    border: 1px solid black;
     color: black;
-}
+};
+
