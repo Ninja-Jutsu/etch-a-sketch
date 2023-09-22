@@ -1,3 +1,16 @@
+:root {
+    --primary-dark: #333;
+    --primary-light: #ededed;
+    --secondary-light: #fefefe;
+  }
+  
+  
+ button.active {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+ }
+
+
 * {
     box-sizing: border-box;
 }
@@ -26,7 +39,7 @@ body {
     height:400px;
     width: 400px;
     min-width: 400px;
-    background-color: rgb(239, 239, 206);
+    background-color: #efefce;
     border: 1px solid black;
     flex-shrink: 0;
 }
