@@ -4,7 +4,7 @@ const divList = [];
 
 function numOfSquares(){
     let squareNum = prompt('Insert a valid number (Max 100)', 100);
-    
+
     if (squareNum<=100){
         for (i=0; i < squareNum ; i++){ 
             const box = document.querySelector('.box');
@@ -22,9 +22,6 @@ function numOfSquares(){
         numOfSquares();
     }
 };
-
-
-
 
 function hoverOn(){
     this.style.backgroundColor = "black";
