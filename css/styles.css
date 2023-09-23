@@ -10,7 +10,6 @@
     color: var(--primary-light);
  }
 
-
 * {
     box-sizing: border-box;
 }
@@ -21,6 +20,7 @@ html {
 body {
     padding:0;
     width: 600px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .btn-n-box {
@@ -76,3 +76,47 @@ button {
 button:hover{
     transform: scale(1.1);
 }
+
+input[type='color'] {
+    width: 80px;
+    height: 80px;
+    border: none;
+    margin: 0 20%;
+  }
+
+input[type='range'] {
+-webkit-appearance: none;
+width: 100%;
+box-sizing: border-box;
+background-color: rgb(223, 174, 109);
+height: 15px;
+opacity: 0.7;
+}
+  
+#sizeSlider::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 20px;
+height: 20px;
+background: #1b211f;
+cursor: pointer;
+}
+
+#sizeValue {
+text-align: center;
+font-size: 20px;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+    align-items: center;
+}
+
