@@ -1,10 +1,9 @@
-
-
 const containers = []
 const divList = []
-const DEFAULT_COLOR = '#333333'
+
+const DEFAULT_COLOR = 'black'
 const DEFAULT_MODE = 'color'
-const DEFAULT_SIZE = 16
+const DEFAULT_SIZE = 2
 
 
 let currentColor = DEFAULT_COLOR
@@ -12,13 +11,12 @@ let currentMode = DEFAULT_MODE
 let currentSize = DEFAULT_SIZE
 
 const box = document.querySelector('.box')
-const setBtn = document.querySelector('.start')
 const clearBtn = document.querySelector('.clear')
-const colorPicker = document.getElementById('colorPicker')
+const picker = document.getElementById('colorPicker')
 const sizeSlider = document.getElementById('sizeSlider')
 const restart = document.querySelectorAll('.container')
 
-colorPicker.oninput = (e) => setCurrentColor(e.target.value)
+picker.oninput = (e) => setCurrentColor(e.target.value)
 clearBtn.onclick = () =>clearBox()
 colorBtn.onclick = () => setCurrentMode('color')
 rainbowBtn.onclick = () => setCurrentMode('rainbow')
@@ -34,7 +32,7 @@ function numOfSquares(){
             for (y=0; y < currentSize ; y++){
                 divList[y] = document.createElement('div');
                 divList[y].setAttribute('class', 'square');
-                divList[y].addEventListener('mouseover', hoverOn);
+                divList[y].addEventListener('mousemove', hoverOn);
                 containers[i].append(divList[y])
             };
             box.append(containers[i]);
@@ -86,7 +84,7 @@ if (currentMode === 'rainbow') {
     colorBtn.classList.remove('active')
 } else if (currentMode === 'eraser') {
     eraserBtn.classList.remove('active')
-}
+};
 
 if (newMode === 'rainbow') {
     rainbowBtn.classList.add('active')
@@ -94,17 +92,18 @@ if (newMode === 'rainbow') {
     colorBtn.classList.add('active')
 } else if (newMode === 'eraser') {
     eraserBtn.classList.add('active')
-}
-}
+};
+};
 
 function changeSize(value) {
     setCurrentSize(value)
     updateSizeValue(value)
     numOfSquares()
-  }
+};
 
 window.onload = () => {
     activateButton(DEFAULT_MODE)
-  }
+    numOfSquares()
+}
 
-  numOfSquares()
+// numOfSquares()

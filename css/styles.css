@@ -1,13 +1,6 @@
-:root {
-    --primary-dark: #333;
-    --primary-light: #ededed;
-    --secondary-light: #fefefe;
-  }
-  
-  
- button.active {
-    background-color: var(--primary-dark);
-    color: var(--primary-light);
+button.active {
+    background-color:#333;
+    color: #ededed;
  }
 
 * {
